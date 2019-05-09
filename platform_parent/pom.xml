@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>cn.com.ffxl</groupId>
+    <artifactId>lib_parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>platform_parent</artifactId>
+  <packaging>pom</packaging>
+  
+  <build>
+     <resources>  
+           <resource>  
+               <directory>src/main/resources/</directory>  
+               <filtering>true</filtering>  
+               <includes>  
+                   <include>**/*.properties</include>  
+               </includes>  
+           </resource>  
+           <resource>
+               <directory>src/main/resources/</directory>  
+               <filtering>false</filtering>  
+               <includes>  
+                   <include>**/*.xml</include>  
+               </includes>  
+           </resource>  
+       </resources>  
+  </build>
+  
+  <modules>
+    <module>platform_common</module>
+  </modules>
+  
+  <profiles>
+        <profile>
+            <id>dev</id>
+            	  <activation>
+               		<activeByDefault>true</activeByDefault>
+           		</activation>
+            <properties>
+                <!-- url签名认证开关 -->
+                <wxs.api.url.sign>0</wxs.api.url.sign>
+                <fxf.api.url.sign>0</fxf.api.url.sign>
+                <!-- 定时任务请求地址 -->
+                <quartz.job.url>http://localhost:8181/quartz</quartz.job.url>
+            </properties>
+        </profile>
+
+         <profile>
+            <id>test</id>
+           		
+            <properties>
+            
+             <!-- url签名认证开关 -->
+             	<wxs.api.url.sign>0</wxs.api.url.sign>
+             	<fxf.api.url.sign>0</fxf.api.url.sign>
+             <!-- 定时任务请求地址 -->
+             	<quartz.job.url>http://localhost:8086/quartz</quartz.job.url>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>pre</id>
+          		
+            <properties>
+            
+             <!-- url签名认证开关 -->
+             	<wxs.api.url.sign>0</wxs.api.url.sign>
+             	<fxf.api.url.sign>0</fxf.api.url.sign>
+             <!-- 定时任务请求地址 -->
+             	<quartz.job.url>http://localhost:8086/quartz</quartz.job.url>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+          		
+            <properties>
+             <!-- url签名认证开关 -->
+             	<wxs.api.url.sign>0</wxs.api.url.sign>
+             	<fxf.api.url.sign>0</fxf.api.url.sign>
+             <!-- 定时任务请求地址 -->
+             	<quartz.job.url>http://task.feifanxinli.com/quartz</quartz.job.url>
+            </properties>
+        </profile>
+        </profiles>
+</project>

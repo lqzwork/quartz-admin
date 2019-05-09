@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ffxl.cloud.mapper.STimetaskMapper">
+	<resultMap extends="BaseResultMap" id="STimetaskMap" type="com.ffxl.cloud.model.STimetask">
+		
+	</resultMap>
+	<update id="updateByIds" parameterType="java.util.List">
+
+		<foreach close="" collection="idList" index="index" item="item" open="" separator=";">
+			update s_timetask
+			<if test="type != null and type !=''  and type=='publish' ">
+				<set>
+					job_status='1'
+				</set>
+			</if>
+			<if test="type != null and type !=''  and type=='remove' ">
+				<set>
+					job_status='0'
+				</set>
+			</if>
+			where id = #{item}
+		</foreach>
+
+	</update>
+	
+	<delete id="deleteByIds" parameterType="java.util.List">
+        delete from s_timetask where id in
+        <foreach close=")" collection="idList" item="item" open="(" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+	
+</mapper>
