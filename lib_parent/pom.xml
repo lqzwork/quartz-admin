@@ -258,8 +258,7 @@
             <version>3.8.1</version>
         </dependency>
 
-        
-        <!-- shiro -->  
+        <!-- shiro -->
         <dependency>  
             <groupId>org.apache.shiro</groupId>  
             <artifactId>shiro-spring</artifactId>  
@@ -281,7 +280,6 @@
             <version>${shiro.version}</version>  
         </dependency>  
 
-       
 	    <!-- quartz spring 3.1以上才支持quartz 2.2.1 -->
 		<dependency>
 			<groupId>org.quartz-scheduler</groupId>
