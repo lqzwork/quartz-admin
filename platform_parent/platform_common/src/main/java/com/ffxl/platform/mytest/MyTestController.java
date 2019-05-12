@@ -54,6 +54,6 @@ public class MyTestController {
      * 定时清除timeTaskLog 7天之前的记录
      */
     public void deleteTimeTaskLog(String data) {
-        LOGGER.info("【定时清除timeTaskLog 7天之前的记录】>>>>>>>>>>>>开始执行6666");
+        LOGGER.info("【定时platform_common】>>>>>>>>>>>>开始执行6666");
     }
 }
