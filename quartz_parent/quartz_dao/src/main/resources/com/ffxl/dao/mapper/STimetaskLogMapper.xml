@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ffxl.business.mapper.STimetaskLogMapper" >
-  <resultMap id="BaseResultMap" type="com.ffxl.business.model.STimetaskLog" >
+<mapper namespace="com.ffxl.dao.mapper.STimetaskLogMapper" >
+  <resultMap id="BaseResultMap" type="com.ffxl.dao.model.STimetaskLog" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="job_id" property="jobId" jdbcType="VARCHAR" />
     <result column="state" property="state" jdbcType="VARCHAR" />
@@ -69,7 +69,7 @@
   <sql id="Base_Column_List" >
     id, job_id, state, create_date, reason
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ffxl.business.model.STimetaskLogExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ffxl.dao.model.STimetaskLogExample" >
     select
     <if test="distinct" >
       distinct
@@ -93,19 +93,19 @@
     delete from s_timetask_log
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.ffxl.business.model.STimetaskLogExample" >
+  <delete id="deleteByExample" parameterType="com.ffxl.dao.model.STimetaskLogExample" >
     delete from s_timetask_log
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.ffxl.business.model.STimetaskLog" >
+  <insert id="insert" parameterType="com.ffxl.dao.model.STimetaskLog" >
     insert into s_timetask_log (id, job_id, state, 
       create_date, reason)
     values (#{id,jdbcType=VARCHAR}, #{jobId,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, 
       #{createDate,jdbcType=TIMESTAMP}, #{reason,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ffxl.business.model.STimetaskLog" >
+  <insert id="insertSelective" parameterType="com.ffxl.dao.model.STimetaskLog" >
     insert into s_timetask_log
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -142,7 +142,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.ffxl.business.model.STimetaskLogExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.ffxl.dao.model.STimetaskLogExample" resultType="java.lang.Integer" >
     select count(*) from s_timetask_log
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -182,7 +182,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ffxl.business.model.STimetaskLog" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.ffxl.dao.model.STimetaskLog" >
     update s_timetask_log
     <set >
       <if test="jobId != null" >
@@ -200,7 +200,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ffxl.business.model.STimetaskLog" >
+  <update id="updateByPrimaryKey" parameterType="com.ffxl.dao.model.STimetaskLog" >
     update s_timetask_log
     set job_id = #{jobId,jdbcType=VARCHAR},
       state = #{state,jdbcType=VARCHAR},

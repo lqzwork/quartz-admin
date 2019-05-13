@@ -1,4 +1,4 @@
-package com.ffxl.business.model.warpper;
+package com.ffxl.dao.model.warpper;
 
 import java.util.Date;
 

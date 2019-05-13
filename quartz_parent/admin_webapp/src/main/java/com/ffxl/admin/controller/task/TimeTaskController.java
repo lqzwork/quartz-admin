@@ -27,8 +27,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ffxl.admin.controller.BaseController;
 import com.ffxl.admin.util.DataTablesUtil;
-import com.ffxl.business.model.STimetask;
-import com.ffxl.business.model.warpper.ScheduleJob;
+import com.ffxl.dao.model.STimetask;
+import com.ffxl.dao.model.warpper.ScheduleJob;
 import com.ffxl.business.service.STimetaskService;
 import com.ffxl.platform.constant.Const;
 import com.ffxl.platform.core.Page;

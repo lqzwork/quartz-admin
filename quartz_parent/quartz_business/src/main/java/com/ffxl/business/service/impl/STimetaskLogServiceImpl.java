@@ -1,9 +1,9 @@
 package com.ffxl.business.service.impl;
 
-import com.ffxl.business.mapper.STimetaskLogMapper;
-import com.ffxl.business.model.STimetaskLog;
-import com.ffxl.business.model.STimetaskLogExample;
-import com.ffxl.business.model.base.BaseSTimetaskLogExample.Criteria;
+import com.ffxl.dao.mapper.STimetaskLogMapper;
+import com.ffxl.dao.model.STimetaskLog;
+import com.ffxl.dao.model.STimetaskLogExample;
+import com.ffxl.dao.model.base.BaseSTimetaskLogExample.Criteria;
 import com.ffxl.business.service.STimetaskLogService;
 import com.ffxl.platform.core.GenericMapper;
 import com.ffxl.platform.core.GenericServiceImpl;

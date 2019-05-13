@@ -1,11 +1,11 @@
-package com.ffxl.business.mapper;
+package com.ffxl.dao.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.ffxl.business.model.STimetask;
-import com.ffxl.business.model.STimetaskExample;
+import com.ffxl.dao.model.STimetask;
+import com.ffxl.dao.model.STimetaskExample;
 import com.ffxl.platform.core.GenericMapper;
 
  /**

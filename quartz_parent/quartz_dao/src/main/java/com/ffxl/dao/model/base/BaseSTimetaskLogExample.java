@@ -1,4 +1,4 @@
-package com.ffxl.business.model.base;
+package com.ffxl.dao.model.base;
 
 import com.ffxl.platform.core.Page;
 import java.util.ArrayList;

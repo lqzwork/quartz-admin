@@ -1,4 +1,4 @@
-package com.ffxl.business.model.mytest;
+package com.ffxl.dao.model.mytest;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;

@@ -6,7 +6,7 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
-import com.ffxl.business.model.warpper.ScheduleJob;
+import com.ffxl.dao.model.warpper.ScheduleJob;
 
 /**
  * 

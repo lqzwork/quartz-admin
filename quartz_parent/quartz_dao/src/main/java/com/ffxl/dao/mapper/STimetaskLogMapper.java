@@ -1,7 +1,7 @@
-package com.ffxl.business.mapper;
+package com.ffxl.dao.mapper;
 
-import com.ffxl.business.model.STimetaskLog;
-import com.ffxl.business.model.STimetaskLogExample;
+import com.ffxl.dao.model.STimetaskLog;
+import com.ffxl.dao.model.STimetaskLogExample;
 import com.ffxl.platform.core.GenericMapper;
 
  /**

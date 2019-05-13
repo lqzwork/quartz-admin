@@ -34,8 +34,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
 import com.ffxl.business.annotation.ControllerLogAnnotation;
-import com.ffxl.business.model.STimetask;
-import com.ffxl.business.model.warpper.ScheduleJob;
+import com.ffxl.dao.model.STimetask;
+import com.ffxl.dao.model.warpper.ScheduleJob;
 import com.ffxl.platform.util.StringUtil;
 import com.ffxl.quartz.init.InitQuartzJob;
 

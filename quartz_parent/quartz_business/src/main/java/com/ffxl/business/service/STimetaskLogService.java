@@ -2,8 +2,8 @@ package com.ffxl.business.service;
 
 import java.util.Date;
 
-import com.ffxl.business.model.STimetaskLog;
-import com.ffxl.business.model.STimetaskLogExample;
+import com.ffxl.dao.model.STimetaskLog;
+import com.ffxl.dao.model.STimetaskLogExample;
 import com.ffxl.platform.core.GenericService;
 
  /**

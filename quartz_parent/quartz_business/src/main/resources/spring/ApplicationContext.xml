@@ -104,7 +104,7 @@ http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
     <!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
     <bean class = "org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name = "basePackage" value = "com.ffxl.business.mapper"/>
+        <property name = "basePackage" value = "com.ffxl.dao.mapper"/>
         <property name = "sqlSessionFactoryBeanName" value = "sqlSessionFactory"/>
         <property name = "annotationClass" value = "org.springframework.stereotype.Repository"/>
         <property name = "markerInterface" value = "com.ffxl.platform.core.GenericMapper"/>

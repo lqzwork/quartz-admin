@@ -2,8 +2,8 @@ package com.ffxl.business.service;
 
 import java.util.List;
 
-import com.ffxl.business.model.STimetask;
-import com.ffxl.business.model.STimetaskExample;
+import com.ffxl.dao.model.STimetask;
+import com.ffxl.dao.model.STimetaskExample;
 import com.ffxl.platform.core.GenericService;
 import com.ffxl.platform.core.Page;
 
