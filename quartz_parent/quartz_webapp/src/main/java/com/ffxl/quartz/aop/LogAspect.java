@@ -18,8 +18,8 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ffxl.cloud.annotation.ControllerLogAnnotation;
-import com.ffxl.cloud.annotation.ServiceLogAnnotation;
+import com.ffxl.business.annotation.ControllerLogAnnotation;
+import com.ffxl.business.annotation.ServiceLogAnnotation;
 
 /**
  * 切点类   
@@ -34,12 +34,12 @@ public class LogAspect{
 	public LogAspect(){
     }
 	//Service层切点    
-    @Pointcut("@annotation(com.ffxl.cloud.annotation.ServiceLogAnnotation)")    
+    @Pointcut("@annotation(com.ffxl.business.annotation.ServiceLogAnnotation)")
     public  void serviceAspect() {
     }
      
     //Controller层切点    
-    @Pointcut("@annotation(com.ffxl.cloud.annotation.ControllerLogAnnotation)")    
+    @Pointcut("@annotation(com.ffxl.business.annotation.ControllerLogAnnotation)")
     public  void controllerAspect() {    
     }
      

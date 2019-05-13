@@ -5,15 +5,14 @@
     <artifactId>quartz_parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>admin_webapp</artifactId>
-  <packaging>war</packaging>
-  <properties>
-        <shiro.version>1.2.3</shiro.version>  
-	</properties>
+  <artifactId>quartz_dao</artifactId>
+  <name>quartz-dao</name>
+  <description>mapper接口和实体类</description>
+  
   <dependencies>
 		<dependency>
 			<groupId>cn.com.ffxl</groupId>
-			<artifactId>quartz_business</artifactId>
+			<artifactId>quartz_common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

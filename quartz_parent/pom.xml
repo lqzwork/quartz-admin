@@ -8,11 +8,11 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <modules>
-        <module>cloud_dao</module>
-        <module>cloud_business</module>
+        <module>quartz_dao</module>
+        <module>quartz_business</module>
         <module>quartz_webapp</module>
         <module>admin_webapp</module>
-        <module>platform_common</module>
+        <module>quartz_common</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -24,7 +24,7 @@
         <!-- mybatis版本号 -->
         <mybatis.version>3.5.0</mybatis.version>
         <mybatis-generator-core.version>1.3.2</mybatis-generator-core.version>
-        <mybatis-spring.version>1.2.2</mybatis-spring.version>
+        <mybatis-spring.version>1.3.0</mybatis-spring.version>
         <!-- log4j日志文件管理包版本 -->
         <slf4j.version>1.7.7</slf4j.version>
         <log4j.version>1.2.17</log4j.version>

@@ -18,11 +18,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
-import com.ffxl.cloud.model.STimetask;
-import com.ffxl.cloud.model.STimetaskExample;
-import com.ffxl.cloud.model.base.BaseSTimetaskExample.Criteria;
-import com.ffxl.cloud.model.warpper.ScheduleJob;
-import com.ffxl.cloud.service.STimetaskService;
+import com.ffxl.business.model.STimetask;
+import com.ffxl.business.model.STimetaskExample;
+import com.ffxl.business.model.base.BaseSTimetaskExample.Criteria;
+import com.ffxl.business.model.warpper.ScheduleJob;
+import com.ffxl.business.service.STimetaskService;
 import com.ffxl.quartz.task.util.QuartzJobFactory;
 import com.ffxl.quartz.task.util.QuartzJobFactoryDisallowConcurrentExecution;
 

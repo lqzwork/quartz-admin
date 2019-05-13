@@ -1,12 +1,7 @@
-package com.ffxl.quartz.task.wxs;
+package com.ffxl.business.model.mytest;
 
-import com.ffxl.business.service.STimetaskLogService;
-import com.ffxl.business.util.ApplicationContextUtils;
-import com.ffxl.platform.util.DateUtil;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
-
-import java.util.Date;
 
 /**
  * 一：定时cron的格式，一个cron表达式有至少6个（也可能7个）有空格分隔的时间元素。
@@ -52,21 +47,14 @@ import java.util.Date;
  * @author liqz and liyj
  */
 @Component
-public class TimeTaskLogDispatchController {
-    private static final Logger LOGGER = Logger.getLogger(TimeTaskLogDispatchController.class);
+public class MyTestController {
+    private static final Logger LOGGER = Logger.getLogger(MyTestController.class);
     
     /**
      * 定时清除timeTaskLog 7天之前的记录
      */
     public void deleteTimeTaskLog(String data) {
-        LOGGER.info("【定时清除timeTaskLog 7天之前的记录】>>>>>>>>>>开始执行");
-        
-        STimetaskLogService bActiveService =
-                (STimetaskLogService) ApplicationContextUtils.getBean(STimetaskLogService.class);
-        Date currentDate = new Date();
-        int day = -7;
-        Date deleteDate = DateUtil.getAfterNumDay(currentDate, day);
-        int ret = bActiveService.deleteLog(deleteDate);
-        LOGGER.info("【定时清除timeTaskLog 7天之前的记录】>>>>>>>>>>执行成功,删除记录数：" + ret);
+        LOGGER.info("【定时cloud_model】>>>>>开始执行6666");
+        LOGGER.info("【定时cloud_model---入参】>>>>" + data);
     }
 }

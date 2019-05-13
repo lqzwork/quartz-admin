@@ -7,10 +7,10 @@ import java.util.Date;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
-import com.ffxl.cloud.model.STimetaskLog;
-import com.ffxl.cloud.model.warpper.ScheduleJob;
-import com.ffxl.cloud.service.STimetaskLogService;
-import com.ffxl.cloud.util.ApplicationContextUtils;
+import com.ffxl.business.model.STimetaskLog;
+import com.ffxl.business.model.warpper.ScheduleJob;
+import com.ffxl.business.service.STimetaskLogService;
+import com.ffxl.business.util.ApplicationContextUtils;
 import com.ffxl.platform.util.UUIDUtil;
 
 public class TaskUtils {
