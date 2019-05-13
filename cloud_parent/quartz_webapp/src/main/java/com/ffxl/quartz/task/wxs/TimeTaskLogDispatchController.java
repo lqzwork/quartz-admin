@@ -49,7 +49,7 @@ import java.util.Date;
  * 0 0 12 1/5 * ? 每月的第一个中午开始每隔5天触发一次
  * 0 11 11 11 11 ? 每年的11月11号 11点11分触发(光棍节)
  *
- * @author jiawei
+ * @author liqz and liyj
  */
 @Component
 public class TimeTaskLogDispatchController {

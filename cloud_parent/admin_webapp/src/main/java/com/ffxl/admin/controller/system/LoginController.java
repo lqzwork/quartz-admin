@@ -15,7 +15,7 @@ import com.ffxl.admin.controller.BaseController;
 
 /**
  * 登录控制器
- * @author jiawei
+ * @author liqz
  * 2018年6月24日
  */
 @Controller

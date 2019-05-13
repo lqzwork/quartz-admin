@@ -12,7 +12,7 @@ public class ImgUtil {
      * @return
      * @throws ParseException
      * @throws IOException
-     * @author jiawei
+     * @author liqz and liyj
      */
      public static boolean imgExist(String imgUrl) throws ParseException, IOException{
             //设置此类是否应该自动执行 HTTP 重定向（响应代码为 3xx 的请求）。

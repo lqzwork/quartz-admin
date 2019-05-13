@@ -57,7 +57,7 @@ public class RuleFactory {
      * 根据规则获取事件重复频率
      * @param ruleStr
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     public static FrequencyEnum extractFreq(String ruleStr){
         FrequencyEnum result = null;
@@ -82,7 +82,7 @@ public class RuleFactory {
      * 解析结束日期
      * @param ruleStr
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     public static Date extractUntilDate(String ruleStr){
         Pattern p = Pattern.compile("until=(\\w+)", Pattern.CASE_INSENSITIVE);
@@ -103,7 +103,7 @@ public class RuleFactory {
      * 解析重复次数
      * @param ruleStr
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     public static Integer extractCount(String ruleStr){
         return extractCommonDigit(ruleStr, "count");
@@ -113,7 +113,7 @@ public class RuleFactory {
      * 解析事件重复间隔
      * @param ruleStr
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     public static Integer extractInterval(String ruleStr) {
         return extractCommonDigit(ruleStr, "interval");
@@ -124,7 +124,7 @@ public class RuleFactory {
      * @param ruleStr
      * @param fieldName
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     private static Integer extractCommonDigit(String ruleStr, String fieldName) {
         Pattern p = Pattern.compile(fieldName + "=(\\d+)", Pattern.CASE_INSENSITIVE);
@@ -143,7 +143,7 @@ public class RuleFactory {
      * BYDAY 一周的某一天重复设置
      * @param ruleStr
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     public static Set<ByDay> extractByDaySet(String ruleStr){
         Set<ByDay> result = new HashSet<ByDay>(); 

@@ -1,8 +1,8 @@
-package com.ffxl.platform.util.eap;
+package eap;
 
 /**
  * ID生成器接口, 用于生成全局唯一的ID号
- * @author jiawei
+ * @author liqz and liyj
  *
  */
 public interface IdGenerator {
@@ -15,7 +15,7 @@ public interface IdGenerator {
     /**
      * 对字符串进行MD5加密后生成16位秘钥，对16位秘钥进行二次AES加密
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     String toMd5AndAes(String str);
 }

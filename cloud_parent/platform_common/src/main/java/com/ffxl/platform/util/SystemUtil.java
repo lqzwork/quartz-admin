@@ -10,7 +10,7 @@ public class SystemUtil {
     /**
      * 图片文件类型枚举
      * 
-     * @author jiawei
+     * @author liqz and liyj
      *
      */
     public enum ImgEnum  {
@@ -20,7 +20,7 @@ public class SystemUtil {
     /**
      * 音频文件类型枚举
      * 
-     * @author jiawei
+     * @author liqz and liyj
      *
      */
     public enum SoundEnum  {

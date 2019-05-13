@@ -9,7 +9,7 @@ import com.ffxl.cloud.model.STimetaskExample;
 import com.ffxl.platform.core.GenericMapper;
 
  /**
- * Generate By MBG 
+ * Generate By liqz and liyj
  **/
 public interface STimetaskMapper extends GenericMapper<STimetask, STimetaskExample, String> {
 

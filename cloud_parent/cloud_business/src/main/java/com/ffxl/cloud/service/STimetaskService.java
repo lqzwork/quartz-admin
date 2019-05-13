@@ -8,7 +8,7 @@ import com.ffxl.platform.core.GenericService;
 import com.ffxl.platform.core.Page;
 
  /**
- * Generate By MBG 
+ * Generate By liqz and liyj
  **/
 public interface STimetaskService extends GenericService<STimetask, STimetaskExample, String> {
      /**

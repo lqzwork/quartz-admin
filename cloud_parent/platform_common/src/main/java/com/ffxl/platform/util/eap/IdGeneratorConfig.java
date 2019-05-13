@@ -2,7 +2,7 @@ package com.ffxl.platform.util.eap;
 
 /**
  * ID生成器的配置接口
- * @author jiawei
+ * @author liqz and liyj
  *
  */
 public interface IdGeneratorConfig {

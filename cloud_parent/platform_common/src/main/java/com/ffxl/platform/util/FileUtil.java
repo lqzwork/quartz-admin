@@ -3,7 +3,7 @@ package com.ffxl.platform.util;
 
 /**
  * 文件操作
- * @author jiawei
+ * @author liqz and liyj
  *
  */
 public class FileUtil {
@@ -12,7 +12,7 @@ public class FileUtil {
      * 获取工程跟目录
      * @param str
      * @return 返回WEB-INF/temp 目录
-     * @author jiawei
+     * @author liqz and liyj
      */
     public static String getRootPath() {
         String path = FileUtil.class.getResource("/").getPath();

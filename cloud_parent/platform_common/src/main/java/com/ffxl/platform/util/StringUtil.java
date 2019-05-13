@@ -236,7 +236,7 @@ public class StringUtil {
      * 获取1~9随机数
      * @param i 位数
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     public static String getRandomStr(int i) {
         String randomStr = RandomStringUtils.random(i, "123456789");
@@ -248,7 +248,7 @@ public class StringUtil {
      * 获取范围随机数
      * @param i 位数
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     public static int getRandomStr(int min, int max) {
         Random random = new Random();

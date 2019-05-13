@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Generate By MBG for serviceImpl
+ * Generate By liqz and liyj for serviceImpl
  **/
 @Service
 public class STimetaskLogServiceImpl extends GenericServiceImpl<STimetaskLog, STimetaskLogExample, String> implements STimetaskLogService {

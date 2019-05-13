@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  * 订单号生成工具，生成非重复订单号，理论上限1毫秒1000个，可扩展 
- * @author jiawei
+ * @author liqz and liyj
  *
  */
 public class MakeOrderNum {

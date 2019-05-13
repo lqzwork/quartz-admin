@@ -7,7 +7,7 @@ import com.ffxl.cloud.model.STimetaskLogExample;
 import com.ffxl.platform.core.GenericService;
 
  /**
- * Generate By MBG 
+ * Generate By liqz and liyj
  **/
 public interface STimetaskLogService extends GenericService<STimetaskLog, STimetaskLogExample, String> {
      /**

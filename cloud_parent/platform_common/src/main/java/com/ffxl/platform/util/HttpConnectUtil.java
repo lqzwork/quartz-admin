@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 通用接口工具类
- * @author jiawei
+ * @author liqz and liyj
  *
  */
 public class HttpConnectUtil {

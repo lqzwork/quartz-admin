@@ -471,7 +471,7 @@ public final class DateUtil {
     * @param beginDay
     * @param endDay
     * @return
-    *  @author jiawei
+    *  @author liqz and liyj
     */
     public static boolean isTheDay(final Date date, final Date beginDay, final Date endDay) {
             return date.getTime() >= DateUtil.dayBegin(beginDay).getTime()
@@ -484,7 +484,7 @@ public final class DateUtil {
      * @param beginDay
      * @param endDay
      * @return
-     *  @author jiawei
+     *  @author liqz and liyj
      */
      public static boolean isTheDayTime(final Date date, final Date beginDay, final Date endDay) {
              return date.getTime() >= beginDay.getTime()
@@ -495,7 +495,7 @@ public final class DateUtil {
     * 获取指定时间的那天 00:00:00.000 的时间
     * @param date
     * @return
-    * @author jiawei
+    * @author liqz and liyj
     */
     public static Date dayBegin(final Date date) {
             Calendar c = Calendar.getInstance();
@@ -511,7 +511,7 @@ public final class DateUtil {
     *
     * @param date
     * @return
-    * @author jiawei
+    * @author liqz and liyj
     */
     public static Date dayEnd(final Date date) {
             Calendar c = Calendar.getInstance();
@@ -687,7 +687,7 @@ public final class DateUtil {
      * @param beginDay
      * @param endDay
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     public static boolean validateTime(final long validate, final Date currentDate) {
         long currentTime = currentDate.getTime();
@@ -714,7 +714,7 @@ public final class DateUtil {
      * @param beforeM
      * @param afterM
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     public static int validateTime(final long validate, final Date canDate,int beforeM, int afterM) {
         Calendar c = Calendar.getInstance();
@@ -755,7 +755,7 @@ public final class DateUtil {
      * @param duration
      * @param interval
      * @return
-     * @author jiawei
+     * @author liqz and liyj
      */
     public static List<Integer> getCountTimes( int duration, int interval){
         List<Integer> timeList = new LinkedList<Integer>();

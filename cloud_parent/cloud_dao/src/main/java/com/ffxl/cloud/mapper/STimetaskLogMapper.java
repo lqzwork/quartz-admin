@@ -5,7 +5,7 @@ import com.ffxl.cloud.model.STimetaskLogExample;
 import com.ffxl.platform.core.GenericMapper;
 
  /**
- * Generate By MBG 
+ * Generate By liqz and liyj
  **/
 public interface STimetaskLogMapper extends GenericMapper<STimetaskLog, STimetaskLogExample, String> {
 }
