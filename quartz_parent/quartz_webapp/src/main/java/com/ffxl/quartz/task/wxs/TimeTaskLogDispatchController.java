@@ -2,7 +2,7 @@ package com.ffxl.quartz.task.wxs;
 
 import com.ffxl.business.service.STimetaskLogService;
 import com.ffxl.business.util.ApplicationContextUtils;
-import com.ffxl.platform.util.DateUtil;
+import com.ffxl.common.util.DateUtil;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 

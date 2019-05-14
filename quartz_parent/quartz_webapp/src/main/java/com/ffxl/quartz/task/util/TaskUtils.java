@@ -11,7 +11,7 @@ import com.ffxl.dao.model.STimetaskLog;
 import com.ffxl.dao.model.warpper.ScheduleJob;
 import com.ffxl.business.service.STimetaskLogService;
 import com.ffxl.business.util.ApplicationContextUtils;
-import com.ffxl.platform.util.UUIDUtil;
+import com.ffxl.common.util.UUIDUtil;
 
 public class TaskUtils {
   public final static Logger log = Logger.getLogger(TaskUtils.class);

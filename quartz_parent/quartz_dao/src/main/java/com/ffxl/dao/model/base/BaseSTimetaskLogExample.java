@@ -1,6 +1,6 @@
 package com.ffxl.dao.model.base;
 
-import com.ffxl.platform.core.Page;
+import com.ffxl.common.core.Page;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

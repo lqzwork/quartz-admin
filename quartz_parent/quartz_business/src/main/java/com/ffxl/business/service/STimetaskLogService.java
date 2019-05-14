@@ -4,7 +4,7 @@ import java.util.Date;
 
 import com.ffxl.dao.model.STimetaskLog;
 import com.ffxl.dao.model.STimetaskLogExample;
-import com.ffxl.platform.core.GenericService;
+import com.ffxl.common.core.GenericService;
 
  /**
  * Generate By liqz and liyj

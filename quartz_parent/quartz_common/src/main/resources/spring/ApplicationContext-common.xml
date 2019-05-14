@@ -14,12 +14,12 @@
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <context:component-scan base-package = "com.ffxl.platform"/>
+    <context:component-scan base-package = "com.ffxl.common"/>
 
     <util:properties id = "commonProperties" location = "classpath:common/common.properties"/>
     <context:property-placeholder properties-ref = "commonProperties" ignore-unresolvable = "true"/>
 
-    <bean class = "com.ffxl.platform.config.CommonProperties">
+    <bean class = "com.ffxl.common.config.CommonProperties">
         <property name = "commonProperties" ref = "commonProperties"/>
     </bean>
 

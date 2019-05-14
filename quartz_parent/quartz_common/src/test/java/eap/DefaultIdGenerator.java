@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import com.ffxl.platform.util.PasswordHelper;
+import com.ffxl.common.util.PasswordHelper;
 
 public class DefaultIdGenerator implements IdGenerator, Runnable {
 

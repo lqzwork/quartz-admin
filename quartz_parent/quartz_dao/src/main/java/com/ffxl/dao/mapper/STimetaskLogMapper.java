@@ -2,7 +2,7 @@ package com.ffxl.dao.mapper;
 
 import com.ffxl.dao.model.STimetaskLog;
 import com.ffxl.dao.model.STimetaskLogExample;
-import com.ffxl.platform.core.GenericMapper;
+import com.ffxl.common.core.GenericMapper;
 
  /**
  * Generate By liqz and liyj

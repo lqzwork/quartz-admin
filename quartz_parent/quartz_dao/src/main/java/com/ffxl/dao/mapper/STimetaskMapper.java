@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.ffxl.dao.model.STimetask;
 import com.ffxl.dao.model.STimetaskExample;
-import com.ffxl.platform.core.GenericMapper;
+import com.ffxl.common.core.GenericMapper;
 
  /**
  * Generate By liqz and liyj

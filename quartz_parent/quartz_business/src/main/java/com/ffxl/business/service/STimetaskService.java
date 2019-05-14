@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.ffxl.dao.model.STimetask;
 import com.ffxl.dao.model.STimetaskExample;
-import com.ffxl.platform.core.GenericService;
-import com.ffxl.platform.core.Page;
+import com.ffxl.common.core.GenericService;
+import com.ffxl.common.core.Page;
 
  /**
  * Generate By liqz and liyj

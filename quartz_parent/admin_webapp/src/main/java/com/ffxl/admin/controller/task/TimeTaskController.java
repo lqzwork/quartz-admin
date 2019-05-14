@@ -30,16 +30,16 @@ import com.ffxl.admin.util.DataTablesUtil;
 import com.ffxl.dao.model.STimetask;
 import com.ffxl.dao.model.warpper.ScheduleJob;
 import com.ffxl.business.service.STimetaskService;
-import com.ffxl.platform.constant.Const;
-import com.ffxl.platform.core.Page;
-import com.ffxl.platform.exception.BusinessException;
-import com.ffxl.platform.util.CronUtil;
-import com.ffxl.platform.util.DateUtil;
-import com.ffxl.platform.util.HttpConnectUtil;
-import com.ffxl.platform.util.JsonDateValueProcessor;
-import com.ffxl.platform.util.JsonResult;
-import com.ffxl.platform.util.Message;
-import com.ffxl.platform.util.StringUtil;
+import com.ffxl.common.constant.Const;
+import com.ffxl.common.core.Page;
+import com.ffxl.common.exception.BusinessException;
+import com.ffxl.common.util.CronUtil;
+import com.ffxl.common.util.DateUtil;
+import com.ffxl.common.util.HttpConnectUtil;
+import com.ffxl.common.util.JsonDateValueProcessor;
+import com.ffxl.common.util.JsonResult;
+import com.ffxl.common.util.Message;
+import com.ffxl.common.util.StringUtil;
 
 /**
  * 定时任务

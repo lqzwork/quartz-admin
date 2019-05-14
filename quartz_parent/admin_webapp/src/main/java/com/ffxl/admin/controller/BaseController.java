@@ -12,7 +12,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ffxl.admin.util.DataTablesUtil;
-import com.ffxl.platform.core.Page;
+import com.ffxl.common.core.Page;
 public class BaseController {
 	@Autowired  
     private HttpSession session;  
