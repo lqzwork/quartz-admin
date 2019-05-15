@@ -23,7 +23,7 @@ import com.ffxl.business.annotation.ServiceLogAnnotation;
 
 /**
  * 切点类   
- * @author wion
+ * @author liqz and liyj
  *
  */
 @Aspect    
