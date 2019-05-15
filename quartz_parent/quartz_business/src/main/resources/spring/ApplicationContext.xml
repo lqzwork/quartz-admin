@@ -96,8 +96,8 @@ http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
         <property name = "configLocation" value = "classpath:mybatis-config.xml"></property>
         <property name = "mapperLocations">
             <list>
-                <value>classpath*:com/ffxl/business/mapper/**/*Mapper.xml</value>
-                <value>classpath*:com/ffxl/business/mapper/ext/**/*Mapper.xml</value>
+                <value>classpath*:com/ffxl/dao/mapper/**/*Mapper.xml</value>
+                <value>classpath*:com/ffxl/dao/mapper/ext/**/*Mapper.xml</value>
             </list>
         </property>
     </bean>
