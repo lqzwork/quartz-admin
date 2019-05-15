@@ -39,7 +39,7 @@ public class InitQuartzJob implements ApplicationContextAware {
     }
     
     public static void init() {
-        schedulerFactoryBean = (SchedulerFactoryBean) appCtx.getBean(SchedulerFactoryBean.class);
+        schedulerFactoryBean = appCtx.getBean(SchedulerFactoryBean.class);
         Scheduler scheduler = schedulerFactoryBean.getScheduler();
         try {
             logger.info(scheduler.getSchedulerName());
@@ -48,12 +48,12 @@ public class InitQuartzJob implements ApplicationContextAware {
             e1.printStackTrace();
         }
         // 这里从数据库中获取任务信息数据
-        STimetaskService sTimetaskService = (STimetaskService) appCtx.getBean(STimetaskService.class);
+        STimetaskService sTimetaskService = appCtx.getBean(STimetaskService.class);
         STimetaskExample example = new STimetaskExample();
         Criteria c = example.createCriteria();
         c.andJobStatusEqualTo("1"); // 已发布的定时任务
         List<STimetask> list = sTimetaskService.selectByExample(example);
-        List<ScheduleJob> jobList = new ArrayList<ScheduleJob>();
+        List<ScheduleJob> jobList = new ArrayList();
         for(STimetask sTimetask : list) {
             ScheduleJob job1 = new ScheduleJob();
             job1.setJobId(sTimetask.getId());
@@ -65,8 +65,8 @@ public class InitQuartzJob implements ApplicationContextAware {
             job1.setBeanClass(sTimetask.getBeanName());// 一个以所给名字注册的bean的实例
             job1.setMethodName(sTimetask.getMethodName());
             job1.setJobData(sTimetask.getJobData()); // 参数
-            job1.setStartTime(sTimetask.getStartTime()); // 参数
-            job1.setEndTime(sTimetask.getEndTime()); // 参数
+            job1.setStartTime(sTimetask.getStartTime()); // 定时开始时间
+            job1.setEndTime(sTimetask.getEndTime()); // 定时结束时间
             jobList.add(job1);
         }
         

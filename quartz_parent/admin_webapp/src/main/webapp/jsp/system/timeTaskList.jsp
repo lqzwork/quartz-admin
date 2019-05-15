@@ -172,7 +172,7 @@
 				if(value=="NORMAL"){
 					msg +=	'<a  href="#"class="btnstyle"  onclick="runJob(\''+rowData.id+'\')" '
 					+'onMouseOver="popTip(this,\' '+rowData+' \' )" class="btn btn-info btn-xs" data-toggle="tooltip"'
-					+' data-placement="top" title="紧执行一次" >立即执行</a>'
+					+' data-placement="top" title="仅执行一次" >立即执行</a>'
 					+	'<a  href="#"class="btnstyle"  onclick="stopJob(\''+rowData.id+'\')" '
 					+'onMouseOver="popTip(this,\' '+rowData+' \' )" class="btn btn-info btn-xs" data-toggle="tooltip"'
 					+' data-placement="top" title="定时任务暂时停止执行" >暂停</a>'
@@ -183,7 +183,7 @@
 				if(value=="PAUSED"){
 					msg +=	'<a  href="#"class="btnstyle"  onclick="runJob(\''+rowData.id+'\')" '
 					+'onMouseOver="popTip(this,\' '+rowData+' \' )" class="btn btn-info btn-xs" data-toggle="tooltip"'
-					+' data-placement="top" title="紧执行一次" >立即执行</a>'
+					+' data-placement="top" title="仅执行一次" >立即执行</a>'
 					
 						 +	'<a  href="#"class="btnstyle"  onclick="addJob(\''+rowData.id+'\')" '
 						+'onMouseOver="popTip(this,\' '+rowData+' \' )" class="btn btn-info btn-xs" data-toggle="tooltip"'
@@ -195,12 +195,12 @@
 				if(value=="COMPLETE"){
 					msg +=	'<a  href="#"class="btnstyle"  onclick="runJob(\''+rowData.id+'\')" '
 					+'onMouseOver="popTip(this,\' '+rowData+' \' )" class="btn btn-info btn-xs" data-toggle="tooltip"'
-					+' data-placement="top" title="紧执行一次" >立即执行</a>'
+					+' data-placement="top" title="仅执行一次" >立即执行</a>'
 				}
 				if(value=="BLOCKED"){
 					msg +=	'<a  href="#"class="btnstyle"  onclick="runJob(\''+rowData.id+'\')" '
 					+'onMouseOver="popTip(this,\' '+rowData+' \' )" class="btn btn-info btn-xs" data-toggle="tooltip"'
-					+' data-placement="top" title="紧执行一次" >立即执行</a>'
+					+' data-placement="top" title="仅执行一次" >立即执行</a>'
 				}
 				if(value=="ERROR"){
 					

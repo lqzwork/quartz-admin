@@ -97,14 +97,14 @@ public class TimeTaskController extends BaseController {
 		 String result = HttpConnectUtil.httpRequest(RUNNING_JOB, Const.REQUEST_METHOD_POST, null);
 		 if(result!=null){
 		 JSONObject jsonResult = JSONObject.fromObject(result);
-		 Map<String, ScheduleJob> map = new HashMap<String, ScheduleJob>();
+		 Map<String, ScheduleJob> map = new HashMap();
 		 if( jsonResult.get("code").equals("2000")){
 		   JSONObject js = (JSONObject) jsonResult.get("data");
 		   JSONArray dataArray = (JSONArray) js.get("job");
 		   if(dataArray.size() > 0){
 		     List<ScheduleJob> jobList =  JSONArray.toList(dataArray,ScheduleJob.class);
 	           for(ScheduleJob job: jobList){
-	             map.put(job.getJobId().toString(), job);
+	             map.put(job.getJobId(), job);
 	           }
 		   }
 		 }
@@ -119,14 +119,14 @@ public class TimeTaskController extends BaseController {
          String planResult = HttpConnectUtil.httpRequest(ALL_JOB, Const.REQUEST_METHOD_GET, null);
          if(planResult!=null){
          JSONObject jsonPlanResult = JSONObject.fromObject(planResult);
-         Map<String, ScheduleJob> planMap = new HashMap<String, ScheduleJob>();
+         Map<String, ScheduleJob> planMap = new HashMap();
          if(jsonPlanResult.get("code").equals("2000")){
            JSONObject js = (JSONObject) jsonPlanResult.get("data");
            JSONArray dataArray = (JSONArray) js.get("job");
            if(dataArray.size() > 0){
              List<ScheduleJob> jobList =  JSONArray.toList(dataArray,ScheduleJob.class);
              for(ScheduleJob job: jobList){
-               planMap.put(job.getJobId().toString(), job);
+               planMap.put(job.getJobId(), job);
              }
            }
          }
@@ -241,8 +241,8 @@ public class TimeTaskController extends BaseController {
     public JsonResult update_task(String ids,String type){
       //查询task
       String[] idArray = ids.split(",");
-      Map<String,String> selectedIdMap =  new HashMap<String,String>();
-      List<String> idList = new ArrayList<String>();
+      Map<String,String> selectedIdMap =  new HashMap();
+      List<String> idList = new ArrayList();
       for (int i = 0; i < idArray.length; i++) {
           idList.add(idArray[i]);
       }
@@ -264,8 +264,8 @@ public class TimeTaskController extends BaseController {
     public JsonResult delete_task(String ids){
       //查询task
       String[] idArray = ids.split(",");
-      Map<String,String> selectedIdMap =  new HashMap<String,String>();
-      List<String> idList = new ArrayList<String>();
+      Map<String,String> selectedIdMap =  new HashMap();
+      List<String> idList = new ArrayList();
       for (int i = 0; i < idArray.length; i++) {
           idList.add(idArray[i]);
       }
