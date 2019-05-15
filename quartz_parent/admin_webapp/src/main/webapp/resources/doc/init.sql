@@ -43,7 +43,7 @@ CREATE TABLE `s_timetask` (
 -- ----------------------------
 -- Records of s_timetask
 -- ----------------------------
-INSERT INTO `s_timetask` VALUES ('001', 'deleteTimeTaskLog', 'TimeTaskLogDispatchController', '2018-12-03 16:19:43', '2018-08-31 00:00:00', '0 0/2 * * * ?', '1', null, '0', '1', 'deleteTimeTaskLog', 'com.ffxl.quartz.task.wxs.TimeTaskLogDispatchController', '定时清除timeTaskLog 7天之前的记录（每天间隔2分钟执行一次）', 'system', '2018-08-31 11:59:09', 'f7c6245b9b5b45d08ed21bf776c7119f', '2018-08-31 11:59:12');
+INSERT INTO `s_timetask` VALUES ('001', 'deleteTimeTaskLog', 'TimeTaskLogDispatchController', '2018-12-03 16:19:43', '2018-08-31 00:00:00', '0 0/2 * * * ?', '1', null, '0', '1', 'deleteTimeTaskLog', 'com.ffxl.quartz.quartztest.TimeTaskLogDispatchController', '定时清除timeTaskLog 7天之前的记录（每天间隔2分钟执行一次）', 'system', '2018-08-31 11:59:09', 'f7c6245b9b5b45d08ed21bf776c7119f', '2018-08-31 11:59:12');
 
 -- ----------------------------
 -- Table structure for s_timetask_log

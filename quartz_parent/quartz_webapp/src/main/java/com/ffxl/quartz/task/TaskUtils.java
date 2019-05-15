@@ -1,4 +1,4 @@
-package com.ffxl.quartz.task.util;
+package com.ffxl.quartz.task;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

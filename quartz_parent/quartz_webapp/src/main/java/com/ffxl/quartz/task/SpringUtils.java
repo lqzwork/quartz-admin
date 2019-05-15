@@ -1,4 +1,4 @@
-package com.ffxl.quartz.task.util;
+package com.ffxl.quartz.task;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;

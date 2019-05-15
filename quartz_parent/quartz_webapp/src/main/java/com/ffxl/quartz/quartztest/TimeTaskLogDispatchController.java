@@ -1,4 +1,4 @@
-package com.ffxl.quartz.task.wxs;
+package com.ffxl.quartz.quartztest;
 
 import com.ffxl.business.service.STimetaskLogService;
 import com.ffxl.business.util.ApplicationContextUtils;

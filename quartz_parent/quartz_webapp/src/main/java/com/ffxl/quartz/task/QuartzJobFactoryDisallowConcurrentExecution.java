@@ -1,4 +1,4 @@
-package com.ffxl.quartz.task.util;
+package com.ffxl.quartz.task;
 
 import org.apache.log4j.Logger;
 import org.quartz.DisallowConcurrentExecution;

@@ -19,7 +19,7 @@
     <aop:aspectj-autoproxy/>
 
     <!-- 初始化springUtils -->
-    <bean id = "springUtils" class = "com.ffxl.quartz.task.util.SpringUtils"/>
+    <bean id = "springUtils" class = "com.ffxl.quartz.task.SpringUtils"/>
     <!-- 初始化Scheduler -->
     <bean id = "schedulerFactoryBean" class = "org.springframework.scheduling.quartz.SchedulerFactoryBean"/>
     <!-- 初始化job  -->
