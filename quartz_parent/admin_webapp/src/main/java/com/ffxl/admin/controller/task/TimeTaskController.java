@@ -49,7 +49,8 @@ import com.ffxl.common.util.StringUtil;
 @Controller
 @RequestMapping(value = "/task")
 public class TimeTaskController extends BaseController {
-    private  static String JOB_URL =  Const.QUARTZ_JOB_URL;
+    // private  static String JOB_URL =  Const.QUARTZ_JOB_URL;
+    private  static String JOB_URL =  "http://localhost:8099";
     private  static String ALL_JOB = JOB_URL+"/opt/getAllJob"; //所有计划中的任务列表
     private  static String RUNNING_JOB = JOB_URL+"/opt/getRunningJob";//所有正在运行的job
     private  static String ADD_JOB = JOB_URL+"/opt/addJob";//添加任务
@@ -91,8 +92,8 @@ public class TimeTaskController extends BaseController {
 	@ResponseBody
 	public JsonResult taskList(DataTablesUtil dataTables, STimetask task, Page page, HttpSession session){
 		 List<STimetask> list = stimetaskService.selectByPage(task, page);
+		 
 		 // 查询task的运行状态
-		
 		 String result = HttpConnectUtil.httpRequest(RUNNING_JOB, Const.REQUEST_METHOD_POST, null);
 		 if(result!=null){
 		 JSONObject jsonResult = JSONObject.fromObject(result);
@@ -113,8 +114,9 @@ public class TimeTaskController extends BaseController {
     		   }
     		 }
 		 }
+		 
 		 // 查询task的计划状态
-         String planResult = HttpConnectUtil.httpRequest(ALL_JOB, Const.REQUEST_METHOD_POST, null);
+         String planResult = HttpConnectUtil.httpRequest(ALL_JOB, Const.REQUEST_METHOD_GET, null);
          if(planResult!=null){
          JSONObject jsonPlanResult = JSONObject.fromObject(planResult);
          Map<String, ScheduleJob> planMap = new HashMap<String, ScheduleJob>();
