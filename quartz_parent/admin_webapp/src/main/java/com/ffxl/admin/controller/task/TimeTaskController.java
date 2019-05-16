@@ -12,7 +12,6 @@ import com.ffxl.dao.model.warpper.ScheduleJob;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,27 +30,27 @@ import java.util.*;
 
 /**
  * 定时任务
- * @author wison
  *
+ * @author wison
  */
 @Controller
 @RequestMapping(value = "/task")
 public class TimeTaskController extends BaseController {
-
+    
     private static final Logger logger = LoggerFactory.getLogger(TimeTaskController.class);
     @Autowired
     private STimetaskService stimetaskService;
-
-//    private  static String JOB_URL =  Const.QUARTZ_JOB_URL;
-    private  static String JOB_URL =  "http://localhost:8099";
-    private  static String ALL_JOB = JOB_URL+"/opt/getAllJob"; //所有计划中的任务列表
-    private  static String RUNNING_JOB = JOB_URL+"/opt/getRunningJob";//所有正在运行的job
-    private  static String ADD_JOB = JOB_URL+"/opt/addJob";//添加任务
-    private  static String PAUSE_JOB =JOB_URL+ "/opt/pauseJob";//暂停一个job
-    private  static String RESUME_JOB = JOB_URL+"/opt/resumeJob";//恢复一个job
-    private  static String DELETE_JOB = JOB_URL+"/opt/deleteJob";//删除一个job
-    private  static String RUNA_JOB =JOB_URL+ "/opt/runAJobNow";//立即执行job
-    private  static String UPDATE_JOB = JOB_URL+"/opt/updateJobCron";//更新job时间表达式
+    
+    //    private  static String JOB_URL =  Const.QUARTZ_JOB_URL;
+    private static String JOB_URL = "http://localhost:8099";
+    private static String ALL_JOB = JOB_URL + "/opt/getAllJob"; //所有计划中的任务列表
+    private static String RUNNING_JOB = JOB_URL + "/opt/getRunningJob";//所有正在运行的job
+    private static String ADD_JOB = JOB_URL + "/opt/addJob";//添加任务
+    private static String PAUSE_JOB = JOB_URL + "/opt/pauseJob";//暂停一个job
+    private static String RESUME_JOB = JOB_URL + "/opt/resumeJob";//恢复一个job
+    private static String DELETE_JOB = JOB_URL + "/opt/deleteJob";//删除一个job
+    private static String RUNA_JOB = JOB_URL + "/opt/runAJobNow";//立即执行job
+    private static String UPDATE_JOB = JOB_URL + "/opt/updateJobCron";//更新job时间表达式
     
     @InitBinder
     public void initBinder(WebDataBinder binder) {
@@ -59,11 +58,9 @@ public class TimeTaskController extends BaseController {
         CustomDateEditor dateEditor = new CustomDateEditor(fmt, true);
         binder.registerCustomEditor(Date.class, dateEditor);
     }
-
+    
     /**
      * 列表页面跳转
-     *
-     * @return
      */
     @RequestMapping(value = "/list")
     public ModelAndView userList(STimetask task) {
@@ -71,11 +68,9 @@ public class TimeTaskController extends BaseController {
         mv.setViewName("system/timeTaskList");
         return mv;
     }
-
+    
     /**
      * 列表
-     *
-     * @return
      */
     @RequestMapping(value = "/task_list")
     @ResponseBody
@@ -85,21 +80,21 @@ public class TimeTaskController extends BaseController {
          * 查询所有任务
          */
         String planResult = HttpConnectUtil.httpRequest(ALL_JOB, Const.REQUEST_METHOD_GET, null);
-        if (planResult != null) {
+        if(planResult != null) {
             JSONObject jsonPlanResult = JSONObject.fromObject(planResult);
             Map<String, ScheduleJob> planMap = new HashMap<String, ScheduleJob>();
-            if (jsonPlanResult.get("code").equals("2000")) {
+            if(jsonPlanResult.get("code").equals("2000")) {
                 JSONObject js = (JSONObject) jsonPlanResult.get("data");
                 JSONArray dataArray = (JSONArray) js.get("job");
-                if (dataArray.size() > 0) {
+                if(dataArray.size() > 0) {
                     List<ScheduleJob> jobList = JSONArray.toList(dataArray, ScheduleJob.class);
-                    for (ScheduleJob job : jobList) {
+                    for(ScheduleJob job : jobList) {
                         planMap.put(job.getJobId(), job);
                     }
                 }
             }
-            for (STimetask st : list) {
-                if (planMap.containsKey(st.getId())) {
+            for(STimetask st : list) {
+                if(planMap.containsKey(st.getId())) {
                     st.setPlanStatus(planMap.get(st.getId()).getJobStatus());
                 }
             }
@@ -108,13 +103,10 @@ public class TimeTaskController extends BaseController {
         dataTables = this.getDataTables(page, dataTables, list);
         return new JsonResult("2000", dataTables);
     }
-
+    
     /**
      * 立即执行一次job
      * 用于测试任务是否正确
-     *
-     * @param id
-     * @return
      */
     @RequestMapping(value = "/run_task2job")
     @ResponseBody
@@ -126,18 +118,15 @@ public class TimeTaskController extends BaseController {
         JSONObject jsonArray = JSONObject.fromObject(stimetask, jsonConfig);
         String result = HttpConnectUtil.httpRequest(RUNA_JOB, Const.REQUEST_METHOD_POST, jsonArray.toString());
         logger.info(result);
-        if (result == null) {
+        if(result == null) {
             return new JsonResult("5000", "定时项目未启动", null);
         } else {
             return new JsonResult("2000", null);
         }
     }
-
+    
     /**
      * 添加job到计划列表
-     *
-     * @param id
-     * @return
      */
     @RequestMapping(value = "/add_task2job")
     @ResponseBody
@@ -149,19 +138,16 @@ public class TimeTaskController extends BaseController {
         JSONObject jsonArray = JSONObject.fromObject(stimetask, jsonConfig);
         String result = HttpConnectUtil.httpRequest(ADD_JOB, Const.REQUEST_METHOD_POST, jsonArray.toString());
         logger.info(result);
-        if (result == null) {
+        if(result == null) {
             return new JsonResult("5000", "定时项目未启动", null);
         } else {
             return new JsonResult("2000", null);
         }
-
+        
     }
-
+    
     /**
      * 从计划列表中暂停job
-     *
-     * @param id
-     * @return
      */
     @RequestMapping(value = "/stop_task2job")
     @ResponseBody
@@ -173,18 +159,15 @@ public class TimeTaskController extends BaseController {
         JSONObject jsonArray = JSONObject.fromObject(stimetask, jsonConfig);
         String result = HttpConnectUtil.httpRequest(PAUSE_JOB, Const.REQUEST_METHOD_POST, jsonArray.toString());
         logger.info(result);
-        if (result == null) {
+        if(result == null) {
             return new JsonResult("5000", "定时项目未启动", null);
         } else {
             return new JsonResult("2000", null);
         }
     }
-
+    
     /**
      * 从计划列表中移除job
-     *
-     * @param id
-     * @return
      */
     @RequestMapping(value = "/remove_task2job")
     @ResponseBody
@@ -196,41 +179,36 @@ public class TimeTaskController extends BaseController {
         JSONObject jsonArray = JSONObject.fromObject(stimetask, jsonConfig);
         String result = HttpConnectUtil.httpRequest(DELETE_JOB, Const.REQUEST_METHOD_POST, jsonArray.toString());
         logger.info(result);
-        if (result == null) {
+        if(result == null) {
             return new JsonResult("5000", "定时项目未启动", null);
         } else {
             return new JsonResult("2000", null);
         }
     }
-	
+    
     /**
      * 变更job状态
-     * @param id
-     * @return
      */
-    @RequestMapping(value="/update_task")
+    @RequestMapping(value = "/update_task")
     @ResponseBody
-    public JsonResult update_task(String ids,String type){
-      //查询task
-      String[] idArray = ids.split(",");
-      Map<String,String> selectedIdMap =  new HashMap<String,String>();
-      List<String> idList = new ArrayList<String>();
-      for (int i = 0; i < idArray.length; i++) {
-          idList.add(idArray[i]);
-      }
-      int ret = stimetaskService.updatebyOperate(idList,type);
-      if(ret >0){
-          return new JsonResult(true);
-      }else{
-          return new JsonResult(false);
-      }
+    public JsonResult update_task(String ids, String type) {
+        //查询task
+        String[] idArray = ids.split(",");
+        Map<String, String> selectedIdMap = new HashMap<String, String>();
+        List<String> idList = new ArrayList<String>();
+        for(int i = 0; i < idArray.length; i++) {
+            idList.add(idArray[i]);
+        }
+        int ret = stimetaskService.updatebyOperate(idList, type);
+        if(ret > 0) {
+            return new JsonResult(true);
+        } else {
+            return new JsonResult(false);
+        }
     }
-
+    
     /**
      * 删除job
-     *
-     * @param ids
-     * @return
      */
     @RequestMapping(value = "/delete_task")
     @ResponseBody
@@ -239,22 +217,20 @@ public class TimeTaskController extends BaseController {
         String[] idArray = ids.split(",");
         Map<String, String> selectedIdMap = new HashMap<String, String>();
         List<String> idList = new ArrayList<String>();
-        for (int i = 0; i < idArray.length; i++) {
+        for(int i = 0; i < idArray.length; i++) {
             idList.add(idArray[i]);
         }
         int ret = stimetaskService.deleteByIds(idList);
-        if (ret > 0) {
+        if(ret > 0) {
             return new JsonResult(true);
         } else {
             return new JsonResult(false);
         }
     }
-
-
+    
+    
     /**
      * 详情页面
-     *
-     * @return
      */
     @RequestMapping(value = "/task_detail")
     public ModelAndView detail(String id) {
@@ -265,11 +241,9 @@ public class TimeTaskController extends BaseController {
         mv.setViewName("system/timeTaskDetail");
         return mv;
     }
-
+    
     /**
      * 解析cron
-     *
-     * @return
      */
     @RequestMapping(value = "/analysis_cron")
     @ResponseBody
@@ -279,24 +253,19 @@ public class TimeTaskController extends BaseController {
             String dateStr = DateUtil.formatStandardDatetime(date);
             List<String> dateList = CronUtil.cronAlgBuNums(cron, dateStr, 5);
             return new JsonResult("2000", dateList);
-        } catch (Exception e) {
+        } catch(Exception e) {
             e.printStackTrace();
             return new JsonResult("5000", null);
         }
     }
-
+    
     /**
      * 验证名称是否存在
-     *
-     * @param id
-     * @param groupName
-     * @param name
-     * @return
      */
     @RequestMapping(value = "/check_name")
     @ResponseBody
     public Boolean check_name(String id, String groupName, String name) {
-        if (StringUtil.isEmpty(groupName, name)) {
+        if(StringUtil.isEmpty(groupName, name)) {
             throw new BusinessException(Message.M4003);
         }
         STimetask task = new STimetask();
@@ -304,7 +273,7 @@ public class TimeTaskController extends BaseController {
         task.setGroupName(groupName);
         task.setName(name);
         STimetask queryTask = stimetaskService.checkName(task);
-        if (queryTask != null) {
+        if(queryTask != null) {
             logger.debug("组.任务名 exists,return false");
             return false;
         } else {
@@ -312,11 +281,9 @@ public class TimeTaskController extends BaseController {
             return true;
         }
     }
-
+    
     /**
      * 保存
-     *
-     * @return
      */
     @RequestMapping(value = "/task_save")
     @ResponseBody
@@ -326,14 +293,14 @@ public class TimeTaskController extends BaseController {
         task.setModifyUserId(longName);
         try {
             int ret = stimetaskService.insertOrUpdateByUser(task, longName);
-            if (ret > 0) {
+            if(ret > 0) {
                 return new JsonResult("2000", task);
             } else {
                 return new JsonResult("5000");
             }
-        } catch (BusinessException e) {
+        } catch(BusinessException e) {
             return new JsonResult("5001", e.getMessage(), null);
         }
     }
-
+    
 }
