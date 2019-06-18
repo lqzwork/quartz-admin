@@ -42,7 +42,8 @@ public class TimeTaskController extends BaseController {
     private STimetaskService stimetaskService;
     
     // private static String JOB_URL = Const.QUARTZ_JOB_URL;
-    private static String JOB_URL = "http://localhost:8099";
+    // private static String JOB_URL = "http://localhost:8099";
+    private static String JOB_URL = "http://172.18.98.25:8099";
     private static String ALL_JOB = JOB_URL + "/opt/getAllJob"; //所有计划中的任务列表
     private static String RUNNING_JOB = JOB_URL + "/opt/getRunningJob";//所有正在运行的job
     private static String ADD_JOB = JOB_URL + "/opt/addJob";//添加任务
