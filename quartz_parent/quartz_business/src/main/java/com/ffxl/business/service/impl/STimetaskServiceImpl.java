@@ -55,6 +55,9 @@ public class STimetaskServiceImpl extends GenericServiceImpl<STimetask, STimetas
         if(!StringUtil.isEmpty(model.getJobStatus())) {
             c.andJobStatusEqualTo(model.getJobStatus());
         }
+        if(!StringUtil.isEmpty(model.getRunningIp())) {
+            c.andRunningIpEqualTo(model.getRunningIp());
+        }
         example.setPage(page);
         example.setOrderByClause(" group_name asc, create_date desc");
         List<STimetask> modelList = sTimetaskMapper.selectByExample(example);

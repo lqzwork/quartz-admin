@@ -7,6 +7,8 @@ public class BaseSTimetask implements Serializable {
     private String id;
 
     private String name;
+    
+    private String runningIp;
 
     private String groupName;
 
@@ -51,7 +53,15 @@ public class BaseSTimetask implements Serializable {
     public String getName() {
         return name;
     }
-
+    
+    public String getRunningIp() {
+        return runningIp;
+    }
+    
+    public void setRunningIp(String runningIp) {
+        this.runningIp = runningIp;
+    }
+    
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }

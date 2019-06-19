@@ -346,11 +346,11 @@
             <properties><!--【开发环境】对应本地数据库-->
                 <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
                 <jdbc.url>jdbc:mysql://172.18.98.220:3306/multicloud?allowMultiQueries=true</jdbc.url>
-                <!--<jdbc.url>jdbc:mysql://172.29.8.16:33061/ffxl_cloud?allowMultiQueries=true</jdbc.url>-->
+                <!--<jdbc.url>jdbc:mysql://192.168.253.57:3306/multicloud?allowMultiQueries=true</jdbc.url>-->
+                <!--<jdbc.username>root</jdbc.username>-->
                 <jdbc.username>lt_modify</jdbc.username>
-                <!--<jdbc.username>skycloud</jdbc.username>-->
+                <!--<jdbc.password>123456</jdbc.password>-->
                 <jdbc.password>xuw8f9mm</jdbc.password>
-                <!--<jdbc.password>abc@123</jdbc.password>-->
             </properties>
         </profile>
 
@@ -358,9 +358,9 @@
             <id>test</id>
             <properties><!--【测试环境】对应的阿里云内网，本机无法连接-->
                 <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
-                <jdbc.url>jdbc:mysql://172.29.8.16:33061/ffxl_cloud?allowMultiQueries=true</jdbc.url>
-                <jdbc.username>skycloud</jdbc.username>
-                <jdbc.password>abc@123</jdbc.password>
+                <jdbc.url>jdbc:mysql://192.168.253.57:3306/multicloud?allowMultiQueries=true</jdbc.url>
+                <jdbc.username>root</jdbc.username>
+                <jdbc.password>123456</jdbc.password>
             </properties>
         </profile>
 

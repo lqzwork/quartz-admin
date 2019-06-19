@@ -530,6 +530,11 @@ public class BaseSTimetaskExample {
             addCriterion("job_status =", value, "jobStatus");
             return (Criteria) this;
         }
+    
+        public Criteria andRunningIpEqualTo(String value) {
+            addCriterion("running_ip =", value, "runningIp");
+            return (Criteria) this;
+        }
 
         public Criteria andJobStatusNotEqualTo(String value) {
             addCriterion("job_status <>", value, "jobStatus");

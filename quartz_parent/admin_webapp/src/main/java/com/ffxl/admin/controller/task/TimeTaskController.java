@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -42,8 +44,16 @@ public class TimeTaskController extends BaseController {
     private STimetaskService stimetaskService;
     
     // private static String JOB_URL = Const.QUARTZ_JOB_URL;
-    // private static String JOB_URL = "http://localhost:8099";
-    private static String JOB_URL = "http://172.18.98.25:8099";
+    // private static String JOB_URL = "http://192.168.253.5:8088";
+    
+    //被监控定时任务所在服务IP   bill_down服务
+    // private static String RUNNING_IP = "172.29.10.133";
+    // private static String JOB_URL = "http://172.18.98.25:8099";
+    
+    //被监控定时任务所在服务IP   bill_balance服务
+    private static String JOB_URL = "http://172.18.98.61:8099";
+    private static String RUNNING_IP = "172.29.11.129";
+    
     private static String ALL_JOB = JOB_URL + "/opt/getAllJob"; //所有计划中的任务列表
     private static String RUNNING_JOB = JOB_URL + "/opt/getRunningJob";//所有正在运行的job
     private static String ADD_JOB = JOB_URL + "/opt/addJob";//添加任务
@@ -76,6 +86,7 @@ public class TimeTaskController extends BaseController {
     @RequestMapping(value = "/task_list")
     @ResponseBody
     public JsonResult taskList(DataTablesUtil dataTables, STimetask task, Page page, HttpSession session) {
+        task.setRunningIp(RUNNING_IP);
         List<STimetask> list = stimetaskService.selectByPage(task, page);
         /**
          * 查询所有任务
