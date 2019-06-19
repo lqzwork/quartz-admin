@@ -71,6 +71,15 @@
 									</div>
 									<!-- /.col -->
 								</div>
+                                <!-- /form-group -->
+                                <div class="form-group">
+                                    <label class="control-label col-lg-1">任务所在服务器IP</label>
+                                    <div class="col-lg-3">
+                                        <input type="text"  name="runningIp"
+                                               value="${model.runningIp}" class="form-control input-sm">
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
 								<div class="form-group">
 									<!-- /.col -->
 									<label class="control-label col-lg-1">任务描述</label>
@@ -142,8 +151,8 @@
 								<div class="form-group">
 								    <label class="control-label col-lg-1">开始执行时间</label>
                                     <div class="col-lg-3">
-                                            <input type="text" id="" name="startTime"
-                                                value='<fmt:formatDate value="${model.startTime}" pattern="yyyy-MM-dd"/>'
+                                            <input type="text" id="startTimeId" name="startTime"
+                                                value='<fmt:formatDate value="${model.startTime}" pattern="yyyy-MM-dd HH:mm:ss"/>'
                                                 class="form-control input-sm" >
                                         </div>
                                     <!-- /.col -->
@@ -152,32 +161,13 @@
 								<div class="form-group">
 								    <label class="control-label col-lg-1">结束执行时间</label>
                                     <div class="col-lg-3">
-                                            <input type="text" id="" name="endTime"
-                                                value='<fmt:formatDate value="${model.endTime}" pattern="yyyy-MM-dd"/>'
+                                            <input type="text" id="endTimeId" name="endTime"
+                                                value='<fmt:formatDate value="${model.endTime}" pattern="yyyy-MM-dd HH:mm:ss"/>'
                                                 class="form-control input-sm">
                                         </div>
                                     <!-- /.col -->
 								</div>
-								<!-- /form-group -->
-								<div class="form-group">
-								    <label class="control-label col-lg-1">创建时间</label>
-                                    <div class="col-lg-3">
-                                            <input type="text" id="" name="createDate"
-                                                value='<fmt:formatDate value="${model.createDate}" pattern="yyyy-MM-dd"/>'
-                                                class="form-control input-sm" disabled="disabled">
-                                        </div>
-                                    <!-- /.col -->
-								</div>
-								<!-- /form-group -->
-								<div class="form-group">
-								    <label class="control-label col-lg-1">修改时间</label>
-                                    <div class="col-lg-3">
-                                            <input type="text" id="" name="modifyDate"
-                                                value='<fmt:formatDate value="${model.modifyDate}" pattern="yyyy-MM-dd"/>'
-                                                class="form-control input-sm" disabled="disabled">
-                                        </div>
-                                    <!-- /.col -->
-								</div>
+
 								<!-- /form-group -->
 								 <div class="text-right m-top-md">
 			                                   	   <input type="button" onclick="backoneHome()" id="" class="btn btn-default" value="返回">
