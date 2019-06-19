@@ -124,7 +124,7 @@
       #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{cron,jdbcType=VARCHAR}, 
       #{jobStatus,jdbcType=VARCHAR}, #{planStatus,jdbcType=VARCHAR}, #{concurrent,jdbcType=TINYINT}, 
       #{jobData,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR}, #{beanName,jdbcType=VARCHAR}, 
-      #{description,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{modifyDate,jdbcType=TIMESTAMP}, 
+      #{description,jdbcType=VARCHAR}, now(), #{modifyDate,jdbcType=TIMESTAMP},
       #{createUserId,jdbcType=VARCHAR}, #{modifyUserId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ffxl.dao.model.STimetask" >

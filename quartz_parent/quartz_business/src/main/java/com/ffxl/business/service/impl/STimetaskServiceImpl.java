@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -87,6 +88,8 @@ public class STimetaskServiceImpl extends GenericServiceImpl<STimetask, STimetas
             model.setConcurrent(false);
             model.setCreateUserId(loginName);
             model.setModifyUserId(loginName);
+            model.setCreateDate(new Date());
+            model.setModifyDate(new Date());
             ret = sTimetaskMapper.insertSelective(model);
             if(ret <= 0) {
                 throw new BusinessException("任务创建失败");
