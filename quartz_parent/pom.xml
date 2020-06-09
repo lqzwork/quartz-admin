@@ -345,12 +345,12 @@
             </activation>
             <properties><!--【开发环境】对应本地数据库-->
                 <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
-                <!--<jdbc.url>jdbc:mysql://172.18.98.220:3308/multicloud?allowMultiQueries=true</jdbc.url>-->
-                <jdbc.url>jdbc:mysql://172.29.8.16:33061/multicloud?allowMultiQueries=true</jdbc.url>
-                <jdbc.username>skycloud</jdbc.username>
-                <!--<jdbc.username>lt_modify</jdbc.username>-->
-                <jdbc.password>abc@123</jdbc.password>
-                <!--<jdbc.password>xuw8f9mm</jdbc.password>-->
+                <jdbc.url>jdbc:mysql://172.18.98.220:3308/multicloud?allowMultiQueries=true</jdbc.url>
+                <!--<jdbc.url>jdbc:mysql://172.29.8.16:33061/multicloud?allowMultiQueries=true</jdbc.url>-->
+                <!--<jdbc.username>skycloud</jdbc.username>-->
+                <jdbc.username>lt_modify</jdbc.username>
+                <!--<jdbc.password>abc@123</jdbc.password>-->
+                <jdbc.password>xuw8f9mm</jdbc.password>
             </properties>
         </profile>
 

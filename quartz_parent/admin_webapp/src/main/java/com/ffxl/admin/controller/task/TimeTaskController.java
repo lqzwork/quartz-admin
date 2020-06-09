@@ -46,10 +46,10 @@ public class TimeTaskController extends BaseController {
     // private static String RUNNING_IP = "192.168.253.5";
     
     //被监控定时任务所在服务IP   wocoud_bill服务
-    // private static String JOB_URL = "http://172.18.98.25:8099";
-    // private static String RUNNING_IP = "172.29.10.133";.25:8099";
-    private static String JOB_URL = "http://172.29.7.125:8099";
-    private static String RUNNING_IP = "172.29.7.125";
+    private static String JOB_URL = "http://172.18.98.25:8099";
+    private static String RUNNING_IP = "172.29.10.133";
+    // private static String JOB_URL = "http://172.29.7.125:8099";
+    // private static String RUNNING_IP = "172.29.7.125";
     
     private static String ALL_JOB = JOB_URL + "/opt/getAllJob"; //所有计划中的任务列表
     private static String RUNNING_JOB = JOB_URL + "/opt/getRunningJob";//所有正在运行的job
